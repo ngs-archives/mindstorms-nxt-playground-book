@@ -1,13 +1,20 @@
 import Prorsum
 import Foundation
 
+let re = try! NSRegularExpression(pattern: "^//#file:([^\n]+)")
+
 let server = try! HTTPServer { (request, writer) in
     do {
-        var str = "Hello, playground"
-        let date = Int(Date().timeIntervalSince1970)
-        let file = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(date).nxc")
+        var res = ""
         switch request.body {
         case .buffer(let data):
+            let src = String(data: data as Data, encoding: .utf8)!
+            var filename = "nxcbuild"
+            if let range = src.range(of: "^//#file:([^\n]+)", options: .regularExpression) {
+                filename = src[range].substring(from: src.index(src.startIndex, offsetBy: 8))
+            }
+            let file = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(filename).nxc")
+            res = file.path
             try! data.write(to: file, options: .atomic)
             let task = Process()
             task.launchPath = "/usr/local/bin/nbc"
@@ -18,7 +25,7 @@ let server = try! HTTPServer { (request, writer) in
         }
         let response = Response(
             headers: ["Server": "Prorsum Micro HTTP Server"],
-            body: .buffer(file.path.data)
+            body: .buffer(res.data)
         )
         try writer.serialize(response)
         writer.close()

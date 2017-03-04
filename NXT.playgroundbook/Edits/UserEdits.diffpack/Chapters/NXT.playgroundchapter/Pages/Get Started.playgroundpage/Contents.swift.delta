@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string></string>
+			<key>ModifiedRange</key>
+			<string>{242, 0}</string>
+			<key>OriginalContent</key>
+			<string>145.</string>
+			<key>OriginalRange</key>
+			<string>{242, 4}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string> </string>
+			<key>ModifiedRange</key>
+			<string>{395, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{399, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/NXT.playgroundchapter/Pages/Get Started.playgroundpage/Contents.swift</string>
+</dict>
+</plist>

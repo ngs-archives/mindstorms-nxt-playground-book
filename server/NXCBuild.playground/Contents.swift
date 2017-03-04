@@ -34,7 +34,13 @@ default:
     break
 }
 
+let src = "//#file:foo\n\nbar"
+          "//#file:hellonxc"
+let range = src.range(of: "^//#file:([^\n]+)", options: .regularExpression)!
+src[range].substring(from: src.index(src.startIndex, offsetBy: 8))
+
 let task = Process()
 task.launchPath = "/usr/local/bin/nbc"
 task.arguments = []
 task.launch()
+String(data: Data(), encoding: .utf8)
