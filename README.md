@@ -16,7 +16,14 @@ wget http://bricxcc.sourceforge.net/lms_arm_nbcnxc.zip
 unzip lms_arm_nbcnxc.zip
 nexttool -firmware="lms_arm_nbcnxc/lms_arm_nbcnxc_132.rfw"
 
-# Setup server project
+# Clone the repo
+git clone git@github.com:ngs/mindstorms-nxt-playground-book.git
+
+# Setup Xcode projects
+cd mindstorms-nxt-playground-book/Server
+swift package generate-xcodeproj
+
+cd ../EasyNXC
 swift package generate-xcodeproj
 ```
 
