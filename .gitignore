@@ -67,4 +67,4 @@ fastlane/screenshots
 fastlane/test_output
 *.xcodeproj
 Packages
-*.playgroundbook/Edit
+*.diffpack
