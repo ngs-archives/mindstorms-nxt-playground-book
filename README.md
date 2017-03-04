@@ -2,6 +2,8 @@
 
 https://devpost.com/software/mindstorms-nxt-playground-book
 
+[![](https://i.vimeocdn.com/video/621786931_520x292.jpg)](https://vimeo.com/206693443)
+
 ## Setup
 
 ```sh
