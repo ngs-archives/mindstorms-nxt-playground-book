@@ -17,3 +17,23 @@ nexttool -firmware="lms_arm_nbcnxc/lms_arm_nbcnxc_132.rfw"
 # Setup server project
 swift package generate-xcodeproj
 ```
+
+
+## How to use
+
+```swift
+let nxt = NXT(name: "Hello NXT") // initialize robot
+
+nxt.rotate(motor: .a, power: 100, angle: 145.0) // change angle of motor
+
+// define sub routine
+let sub = nxt.sub { nxt in
+    nxt.forward(length: 100, turn: 0)
+    nxt.wait(msec: 500)
+    nxt.reverse(length: 100, turn: 0)
+    nxt.wait(msec: 500)
+}
+
+// call sub routine
+sub.call()
+```
